@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const { kitties } = require('./datasets/kitties');
 const { clubs } = require('./datasets/clubs');
 const { mods } = require('./datasets/mods');
@@ -326,7 +327,7 @@ const bookPrompts = {
   },
   getNewBooks() {
     // return an array of objects containing all books that were
-    // published in the 90's and 00's. Inlucde the title and the year Eg:
+    // published in the 90's and 00's. Include the title and the year Eg:
 
     // [{ title: 'Harry Potter and the Sorcerer\'s Stone', year: 1997 },
     //  { title: 'Life of Pi', year: 2001 },
@@ -440,7 +441,7 @@ const nationalParksPrompts = {
     // Return an array of all the activities I can do
     // in a National Park. Make sure to exclude duplicates. eg:
     // [ 'hiking',
-    //   'shoeshoing',
+    //   'snowshoeing',
     //   'camping',
     //   'fishing',
     //   'boating',
