@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+/* eslint-disable */
 const chai = require('chai');
 const expect = chai.expect;
 
@@ -21,7 +21,7 @@ const {
 
 describe('PROTOTYPES', () => {
   describe('Kitty Prompts', () => {
-    it.only('orangeKittyNames', () => {
+    it('orangeKittyNames', () => {
       const e = kittyPrompts.orangeKittyNames();
       
       expect(e).to.deep.equal(['Tiger', 'Snickers']);
@@ -49,7 +49,7 @@ describe('PROTOTYPES', () => {
       }]);
     });
     
-    it('growUp', () => {
+    it.only('growUp', () => {
       const e = kittyPrompts.growUp();
 
       expect(e).to.deep.equal([{
@@ -673,7 +673,7 @@ describe('PROTOTYPES', () => {
         'Joe Johnston': {
           'Jurassic Park III': 44
         },
-        'Colin Trevorrow': {
+        'Trevorow': {
           'Jurassic World': 56
         },
         'J. A. Bayona': {

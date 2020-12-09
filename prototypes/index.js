@@ -1,18 +1,52 @@
-/* eslint-disable max-len */
-const { kitties } = require('./datasets/kitties');
-const { clubs } = require('./datasets/clubs');
-const { mods } = require('./datasets/mods');
-const { cakes } = require('./datasets/cakes');
-const { classrooms } = require('./datasets/classrooms');
-const { breweries } = require('./datasets/breweries');
-const { nationalParks } = require('./datasets/nationalParks');
-const { books } = require('./datasets/books');
-const { weather } = require('./datasets/weather');
-const { instructors, cohorts } = require('./datasets/turing');
-const { bosses, sidekicks } = require('./datasets/bosses');
-const { constellations, stars } = require('./datasets/astronomy');
-const { weapons, characters } = require('./datasets/ultima');
-const { dinosaurs, humans, movies } = require('./datasets/dinosaurs');
+/* eslint-disable */
+const {
+  kitties
+} = require('./datasets/kitties');
+const {
+  clubs
+} = require('./datasets/clubs');
+const {
+  mods
+} = require('./datasets/mods');
+const {
+  cakes
+} = require('./datasets/cakes');
+const {
+  classrooms
+} = require('./datasets/classrooms');
+const {
+  breweries
+} = require('./datasets/breweries');
+const {
+  nationalParks
+} = require('./datasets/nationalParks');
+const {
+  books
+} = require('./datasets/books');
+const {
+  weather
+} = require('./datasets/weather');
+const {
+  instructors,
+  cohorts
+} = require('./datasets/turing');
+const {
+  bosses,
+  sidekicks
+} = require('./datasets/bosses');
+const {
+  constellations,
+  stars
+} = require('./datasets/astronomy');
+const {
+  weapons,
+  characters
+} = require('./datasets/ultima');
+const {
+  dinosaurs,
+  humans,
+  movies
+} = require('./datasets/dinosaurs');
 
 
 
@@ -25,48 +59,56 @@ const { dinosaurs, humans, movies } = require('./datasets/dinosaurs');
 // DATASET: kitties from ./datasets/kitties
 const kittyPrompts = {
   orangeKittyNames() {
-
-    // Return an array of just the names of kitties who are orange e.g.
-    // ['Tiger', 'Snickers']
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
-
-    // Annotation:
-    // Write your annotation here as a comment
+    const orangeCats = kitties.filter((kitty) =>
+      kitty.color == 'orange').map(kitty => kitty.name)
+    return orangeCats
   },
 
+  // Return an array of just the names of kitties who are orange e.g.
+  // ['Tiger', 'Snickers']
+  // Annotation:
+  // Write your annotation here as a comment
+  // input: array of kitty objects
+  // output: array of kitty objects where color = orange
+  // methods: filter
+
   sortByAge() {
+
+    const result = kitties.sort((a, b) => b.age - a.age)
+    return result
+
     // Sort the kitties by their age
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
-
     // Annotation:
-    // Write your annotation here as a comment
+    // input: array kitties[kitty{name, age, color}]
+    // output: array kitties[kitty{name, age, color}]
+    // methods: sort
   },
 
   growUp() {
-    // Return an array of kitties who have all grown up by 2 years e.g.
-    // [{
-    //   name: 'Felicia',
-    //   age: 4,
-    //   color: 'grey'
-    // },
-    // {
-    //   name: 'Tiger',
-    //   age: 7,
-    //   color: 'orange'
-    // },
-    // ...etc]
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    this.sortByAge()
+    const result = kitties.map(kitty => {
+      kitty.age = kitty.age + 2
+    })
+    return kitties
   }
 };
 
+// input: array kitties[kitty{name, age, color}]
+// output: array kitties[kitty{name, age + 2, color}]
+// methods: map
 
-
-
+// Return an array of kitties who have all grown up by 2 years e.g.
+// [{
+//   name: 'Felicia',
+//   age: 4,
+//   color: 'grey'
+// },
+// {
+//   name: 'Tiger',
+//   age: 7,
+//   color: 'orange'
+// },
+// ...etc]
 
 
 // ---------------------------------------------------------------------------
@@ -74,10 +116,6 @@ const kittyPrompts = {
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-
-
-
-
 
 
 // DATASET: clubs from ./datasets/clubs
@@ -750,7 +788,7 @@ const astronomyPrompts = {
 
 
 
-// DATASET: charaters, weapons from ./datasets/ultima
+// DATASET: characters, weapons from ./datasets/ultima
 const ultimaPrompts = {
   totalDamage() {
 
@@ -828,7 +866,7 @@ const dinosaurPrompts = {
           {
             'Jurassic Park III': 44
           },
-        'Colin Trevorrow':
+        'Colin Trevorow':
           {
             'Jurassic World': 56
            },
